@@ -1,26 +1,23 @@
 import { createSignal } from 'solid-js'
 import './App.css'
-import './three/scene'
+import AISphere from './components/AISphere'
 
 function App() {
   const [count, setCount] = createSignal(0)
 
   return (
     <>
+      <AISphere onSphereClick={() => setCount((count) => count + 1)} />
       <section id="center">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
+          <h1>VELTRIX</h1>
+          <p id='description' >
+            A bold, futuristic digital experience exploring the intersection of technology, 3D graphics, and creative innovation
           </p>
         </div>
-        <button
-          type="button"
-          class="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count()}
-        </button>
+        <p class="counter" aria-live="polite">
+          Click the sphere — {count()} {count() === 1 ? 'node' : 'nodes'} added
+        </p>
       </section>
 
       <div class="ticks"></div>

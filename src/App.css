@@ -1,13 +1,22 @@
-#webgl {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
+input,
+textarea,
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+#root > :not(.ai-sphere) {
   position: relative;
   z-index: 1;
+}
+
+#description {
+  padding: 0px 15%;
 }
